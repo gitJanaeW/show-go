@@ -3,16 +3,35 @@
 <head>
     <meta charset=“UTF-8”>
     <meta name=“viewport” content=“width=device-width, initial-scale=1.0”>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href=“/dist/output.css” rel=“stylesheet”>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
-    <header class=“”>
-        <!-- Class “flex” isnt working -->
-        <h1 class=>ShowGo</h1>
-        <p id=“#what-we-do”>What We Do</p>
-        <button class=“bg-green-900 hover:bg-green-900 text-white font-bold py-2 px-4 rounded”>Get Started</button>
-    </header>
+    <header class="">
+        <!-- Navbar reference: https://bulma.io/documentation/components/navbar/#basic-navbar -->
+        <nav class="navbar has-background-success-dark py-1">
+            <div class="navbar-brand">
+                <h1 href="#" class="navbar-item m-0 has-text-white-bis mx-2">SHOWGO</h1>
+                <a role="button" aria-label="menu" aria-expanded="false" class="navbar-burger" data-target="navBar">
+                    <!-- This creates the "burger" (the 3 white lines) -->
+                    <span class="has-background-white" aria-hidden="true"></span>
+                    <span class="has-background-white" aria-hidden="true"></span>
+                    <span class="has-background-white" aria-hidden="true"></span>
+                </a>
+            </div>
+            <!-- Hidden until JS shows them -->
+            <div id="navBar" class="navbar-menu">
+                <div class="navbar-start is-flex is-align-content-center">
+                    <a href="#" class="navbar-item">Find Your ID</a>
+                    <a href="#" class="narbar-item">Your Watchlist</a>
+                    <a href="#" class="navbar-item">Contact</a>
+                </div>
+            </div>
+            
+          </nav>        
+    </header>   
+
+    
     <main>
         <section>
             <h2 >Find Your Sound, Find Your Show</h2>
@@ -34,7 +53,7 @@
         <!--Submit Location-->
         <section>
             <form>
-                <input class=“” type=“text” placeholder=“Location” id=“location-input” name=“location” required />
+                <input  type=“text” placeholder=“Location” id=“location-input” name=“location” required />
                 <input type=“submit” value=“Submit” />
             </form>
         </section>
@@ -48,7 +67,6 @@
             <div class=“results” visibility=“hidden”></div>
         </section>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src=“/script.js”></script>
+    <script src='script.js' type="text/javascript"></script>
 </body>
 </html>
