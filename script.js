@@ -27,6 +27,7 @@ let tmGenres = {
   undefined: "KnvZfZ7vAe6",
   world: "KnvZfZ7vAeF",
 };
+
 // location
 let city = "ottawa";
 // spotify api key
@@ -112,3 +113,11 @@ function getEvent(genreId, city) {
       console.log(data);
     });
 }
+
+const navbarBurger = document.querySelector(".navbar-burger");
+const navDropdown = document.querySelector("#nav-dropdown");
+const navbarItem = document.querySelector(".navbar-item");
+document.addEventListener("click", function () {
+  navbarBurger.classList.toggle("is-active");
+  navDropdown.classList.toggle("is-active");
+});
