@@ -50,11 +50,18 @@ const options = {
 //     .then(response => response.json())
 //     .then(response => console.log(response))
 //     .catch(err => console.error(err));
-fetch('https://spotify23.p.rapidapi.com/user_profile/?id=21gssgncgaiksynw4ely2rkea&playlistLimit=10&artistLimit=10', options)
-    .then(response => response.json())
-    .then(response => console.log(response.public_playlists[0].uri.slice(17)))
-    .catch(err => console.error(err));
-// fetch('https://spotify23.p.rapidapi.com/playlist_tracks/?id=6E2sF3ikgXfa6n5VykRQI8&offset=0&limit=100', options)
-//  .then(response => response.json())
-//  .then(response => console.log(response))
-//  .catch(err => console.error(err));
+// fetch('https://spotify23.p.rapidapi.com/user_profile/?id=21gssgncgaiksynw4ely2rkea&playlistLimit=10&artistLimit=10', options)
+//     .then(response => response.json())
+//     .then(response => console.log(response.public_playlists[0].uri.slice(17)))
+//     .catch(err => console.error(err));
+// // fetch('https://spotify23.p.rapidapi.com/playlist_tracks/?id=6E2sF3ikgXfa6n5VykRQI8&offset=0&limit=100', options)
+// //  .then(response => response.json())
+// //  .then(response => console.log(response))
+// //  .catch(err => console.error(err));
+const navbarBurger = document.querySelector(".navbar-burger");
+const navDropdown = document.querySelector("#nav-dropdown");
+const navbarItem = document.querySelector(".navbar-item");
+document.addEventListener("click", function () {
+    navbarBurger.classList.toggle("is-active");
+    navDropdown.classList.toggle("is-active");
+});
