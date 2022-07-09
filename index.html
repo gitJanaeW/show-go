@@ -7,7 +7,7 @@
     <link href=“/dist/output.css” rel=“stylesheet”>
 </head>
 <body>
-    <header class="">
+    <header>
         <!-- Navbar reference: https://bulma.io/documentation/components/navbar/#basic-navbar -->
         <nav class="navbar has-background-success-dark py-1">
             <div class="navbar-brand">
@@ -27,23 +27,42 @@
                     <a href="#" class="navbar-item">Contact</a>
                 </div>
             </div>
-            
           </nav>        
-    </header>   
-
-    
-    <main>
-        <section>
-            <h2 >Find Your Sound, Find Your Show</h2>
-            <p>Description of our service blah blah. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est aut
-                error similique iure architecto dolor magni quas dignissimos, esse vel nostrum, natus et soluta impedit
-                voluptate deleniti illum quod vero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis
-                nulla modi perferendis repudiandae dolorem. Ratione, iste enim quasi totam corrupti, ea corporis quaerat
-                optio sit dolores nemo, minus fuga animi?</p>
-        </section>
+    </header>  
+    <section>
+        <img src="./assets/images/concert-hand.png" alt="A purple hand on a bright yellow backdrop" class="content-hand-img">
+    <div class="box has-background-grey-light is-relative">
+        <h2>WELCOME TO SHOWGO</h2>
+        <p>Tired of trying to figure out what concert to go to? ShowGo provides you with events that match your fave Spotify playlists</p>
+    </div>
+    </section> 
+    <main class="has-background-grey-darker is-flex is-flex-direction-column is-align-items-center py-6">
         <!--Form Section-->
-        <!--Submite Username-->
+        <!--Submit Username-->
         <section>
+            <h2 class="px-auto has-text-white my-6 mx-auto is-size-3">Find Your Event</h2>
+            <form id="submit-btn" class="is-flex is-flex-direction-column is-align-items-center">
+                <input id=“spot-id” type=“text” placeholder="Your ID" name=“username” class="input is-rounded py-2" required/><br>
+                <input id=“location” type=“text” placeholder="Your City" class="input is-rounded py-2" required/><br>
+                <button id="submitBtn" class="button is-rounded">Search for Shows</button>
+            </form>
+        </section>
+        <!--watchlist-->
+        <section>
+            <h2>Your Watchlist</h2>
+            <!-- If no watchlist items, show text that says “You have nothing on your watchlist” -->
+        </section>
+        <section>
+            <div class=“results” visibility=“hidden”></div>
+        </section>
+    </main>
+    <script src='script.js' type="text/javascript"></script>
+
+    <!-- @Sonja: This was your input. Didn't want to throw it away without permission! -->
+            <!--Form Section-->
+        <!--Submit Username-->
+        <section>
+            <h2 class="px-auto has-text-white my-6 mx-auto is-size-3">Find Your Event</h2>
             <form action=“” id=“submit-username”>
                 <input class=“border-solid border-2 border-indigo-600” type=“text”
                     placeholder=“Enter Your Spotify Username!” id=“spot-id” name=“username” required />
@@ -57,16 +76,5 @@
                 <input type=“submit” value=“Submit” />
             </form>
         </section>
-        <!--watchlist-->
-        <section>
-            <h2>Your Watchlist</h2>
-            <!-- If no watchlist items, show text that says “You have nothing on your watchlist” -->
-        </section>
-        <section>
-            <button>Get Started</button>
-            <div class=“results” visibility=“hidden”></div>
-        </section>
-    </main>
-    <script src='script.js' type="text/javascript"></script>
 </body>
 </html>
