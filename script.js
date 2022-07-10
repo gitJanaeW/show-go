@@ -144,5 +144,3 @@ submitBtn.addEventListener("click", function(e){
     city = locationInp.value;
     fetchResults(spotifyID);
 });
-
-console.log(spotIdInp.value)
