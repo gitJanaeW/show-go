@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowGo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+</head>
+
+<body>
+    <!-- <main class="has-background-grey-darker is-flex is-flex-direction-column is-align-items-center py-6"> -->
+
+    <!-- Navbar reference: https://bulma.io/documentation/components/navbar/#basic-navbar -->
+    <!--Nav Bar-->
+    <nav class="navbar has-shadow is-dark">
+        <!--Brand Loga-->
+        <div class="navbar-brand">
+            <a class="navbar-item">ShowGo
+            </a>
+            <a class="navbar-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="navbar-links">
+            <div class="navbar-end">
+                <a href="#" class="navbar-item">Find Your ID</a>
+                <a href="#" class="navbar-item">Your Watchlist</a>
+                <a href="#" class="navbar-item">Contact Us</a>
+            </div>
+    </nav>
+    <!--Hero Banner-->
+    <section class="hero-banner">
+        <div class="card-content is-overlay">
+            <div class="card-image">
+                <img src="./assets/images/concerthandwithbubble.png" alt="A purple hand on a bright yellow backdrop"
+                    class="content-hand-img">
+            </div>
+        </div>
+    </section>
+    <!--Hero Section Ends-->
+
+
+    <!--Welcome to the Site Section-->
+    <section class="section">
+        <div class="container">
+            <div class="column is-vcentered is multiline">
+                <!--To the left, what we do-->
+                <div class="column is-12-mobile is-6-tablet is-6-desktop ">
+                    <h1 class="is-size-3-mobile is-size-1-desktop title mt-6">Find Your Sound,</h1>
+                    <h2 class="is-size-4-mobile is-size-2-desktop subtitle mb-0">Your Way.</h2>
+
+                </div>
+                <!--To the right, SpotGo to the Rescue section-->
+                <div class="columns is-vcentered is-justify-content-right">
+                    <div class="column is-12-mobile is-6-tablet is-6-desktop">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h2 class="s-size-4-mobile is-size-2-desktop subtitle mb-0">LESS SEARCHING,
+                            MORE DANCING!
+                        </h2>
+                        <h3 class="is-size-2 mt-6 mb-4">Let SHOWGO do the heavy-lifting. Give us your Spotify ID and
+                            we’ll give you artists that you’ll LOVE at a concert near you!</h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--How To Do it Section-->
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <!--To the Left-->
+                <div class="column is-6-tablet">
+                    <p class="is-size-4">Start with your Spotify Username and desired location and you'll see events to
+                        go
+                        to based on your listening history!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--To the right-->
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-6-tablet is-offset-6">
+                    <p>need to find your Username?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Form Section-->
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <h2 class="is-size-3 has-text-centered">Find Your Event</h2>
+                    <br>
+                    <form id="event-picker">
+                        <input type="text" class="input is-rounded py-2" id="spotify-username"
+                            placeholder="Your Spotify Username" name="spot-id" required />
+                        <br>
+                        <br>
+                        <input type="text" class="input is-rounded py-2" id="location" placeholder="Your City"
+                            name="city" required />
+                        <br>
+                        <button class="button is-light is-rounded has-text-centred my-4" type="submit"
+                            value="submit input" id="submit-button">Search
+                            for
+                            Events</button>
+                    </form>
+                </div>
+            </div>
+    </section>
+
+    <!--Event Dom Section-->
+    <section class="section">
+        <div class="card">
+            <div class="card-content">
+                <div class="content">
+                    <div class="columns">
+                        <div class="column is-narrow">
+                            <div class="card-image ">
+                                <figure class="image is-8by9">
+                                    <img class="is-rounded" src="./assets/images/aconcert.jpeg">
+                                </figure>
+                                <div class="media-content has-text-centered">
+                                    <p class="title is-4">
+                                        {{ date}}
+                                    </p>
+                                    <p class="subtitle is-6">day + time</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <nav class="level">
+                                <div class="level-item has-text-centered">
+                                    <div>
+
+                                        <p class="title">80s & 90s Rock Rewind</p>
+                                    </div>
+                                </div>
+                                <div class="level-item has-text-centered">
+                                    <div>
+                                        <button class="button is-light is-rounded has-text-centred my-4" type="submit"
+                                            value="submit input" id="submit-button">Buy Tickets</button>
+                                    </div>
+                                </div>
+                                <div class="level-item has-text-centered">
+                                    <div>
+                                        <button class="button is-light is-rounded has-text-centred my-4" type="submit"
+                                            value="submit input" id="submit-button">Add to watchlist</button>
+                                    </div>
+                                </div>
+                        </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!--Footer-->
+    <section class="footer has-text-white has-background-dark">
+        <p>This is the footer!</p>
+    </section>
+
+</body>
+<script src="index.js"></script>
+<script src='script.js' type="text/javascript"></script>
+
+</html>
