@@ -9,6 +9,7 @@ const spotIdInp = document.querySelector("#spotify-username");
 const locationInp = document.querySelector("#location");
 const submitBtn = document.querySelector("#submit-button");
 const btn = document.getElementById('heart-icon');
+const concertList = document.querySelector(".concert-list");
 
 // misc
 let city = "";
@@ -142,7 +143,39 @@ function getConcertValues(concerts){
     const eventName = concerts._embedded.events[0].name;
     console.log(eventName);
 
-    createResults(img, ticketImg, eventName);
+    createResults(ticketImg, ticketImg, eventName);
+}
+
+function createResults(){
+    for(let i = 0; i < 5; i++){
+        // create DOm elements
+        var columns = document.createElement("div");
+        columns.classList = "columns";
+
+        // var 
+
+
+        var concertCard = document.createElement("div");
+        concertCard.classList = "column is-narrow";
+        
+        var cardImg = document.createElement("div");
+        cardImg.classList = "card-image";
+
+        var imgBox = document.createElement("figure");
+        imgBox.classList = "image is-8by9";
+        imgBox.innerHTML = "<img class='is-rounded' src='./assets/images/aconcert.jpeg'>";
+
+        var textBox = document.createElement("div");
+        textBox.classList = "media-content has-text-centered"
+        textBox.innerHTML = "<p class='title is-4'>start-enddate</p><p class='subtitle is-6'>weekdaystart-weekday-end</p>"
+
+        // append DOm elements
+        concertList.appendChild(concertCard);
+        concertCard.appendChild(cardImg);
+        cardImg.appendChild(imgBox);
+        cardImg.appendChild(textBox);
+    }
+
 }
 
 submitBtn.addEventListener("click", function (e) {
