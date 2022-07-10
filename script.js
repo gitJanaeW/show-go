@@ -1,29 +1,3 @@
-// var formEl = document.querySelector("#event-picker")
-// var eventsToSeeEl = document.querySelector("#events-to-see")
-
-// var createEventHandler = function (event) {
-//     event.preventDefault();
-//     var usernnameInput = document.querySelector("input[name='spot-id']").value;
-//     var locationInput = document.querySelector("input[name='city']").value;
-
-//     //create event list item
-//     var eventlistItemEl = document.createElement("li");
-//     eventlistItemEl.className = "event-list-item";
-
-//     //create div to hold events list and add to 
-//     var eventInfoEl = document.createElement("div");
-//     // give it a class name
-//     eventInfoEl, className = "event-info";
-//     // add HTML content to div
-//     eventInfoEl.innerHTML = "</h3><span class='Events'>" + locationInput + "</span>";
-
-//     eventlistItemEl.appendChild(eventInfoEl);
-
-//     eventsToSeeEl.appendChild(eventlistItemEl);
-// }
-
-// formEl.addEventListener("submit", createEventHandler);
-
 // SONJA'S SPOTIFY ID FOR TESTING
 // 21gssgncgaiksynw4ely2rkea
 // VARIABLES
@@ -149,10 +123,7 @@ function getEvent(genreId, location) {
             console.log(data);
         });
 }
-// document.addEventListener("click", function () {
-//     navbarBurger.classList.toggle("is-active");
-//     navDropdown.classList.toggle("is-active");
-// });
+
 submitBtn.addEventListener("click", function (e) {
     e.preventDefault();
     // console.log(spotIdInp)
@@ -161,3 +132,17 @@ submitBtn.addEventListener("click", function (e) {
     city = locationInp.value;
     fetchResults(spotifyID);
 });
+
+const btn = document.getElementById('heart-icon');
+
+let index = 0;
+
+const colors = ['red', ''];
+
+btn.addEventListener('click', function onClick() {
+    btn.style.backgroundColor = colors[index];
+    btn.style.color = 'black';
+
+    index = index >= colors.length - 1 ? 0 : index + 1;
+});
+
