@@ -2,6 +2,9 @@
 // 21gssgncgaiksynw4ely2rkea
 // VARIABLES
 // getting HTML elements
+const navbarBurger = document.querySelector(".navbar-burger");
+const navDropdown = document.querySelector("#nav-dropdown");
+const navbarItem = document.querySelector(".navbar-item");
 const spotIdInp = document.querySelector("#spotify-username");
 const locationInp = document.querySelector("#location");
 const submitBtn = document.querySelector("#submit-button");
@@ -34,7 +37,6 @@ let tmGenres = {
     undefined: "KnvZfZ7vAe6",
     world: "KnvZfZ7vAeF"
 };
-
 // location
 let city = "";
 // spotify api key
@@ -45,7 +47,6 @@ const options = {
         "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
     },
 };
-
 function fetchResults(spotifyID, location) {
     console.log(spotifyID)
     // spotify user playlist fetch
@@ -104,9 +105,7 @@ function checkGenres(spotifyGenres, tmGenres) {
             }
         }
     }
-};
-
-
+}
 // ticket master fetch for events by genre id and city
 function getEvent(genreId, location) {
     console.log(location)
@@ -123,33 +122,26 @@ function getEvent(genreId, location) {
         .then(function (data) {
             console.log(data);
         });
-      }
+}
+
 submitBtn.addEventListener("click", function (e) {
-  var gas =
-    "https://app.ticketmaster.com/discovery/v2/events.json?genreId=" +
-    genreId +
-    "&city=" +
-    location +
-    "&apikey=pUF7AkmB2U2SWPEbs1grVeUmhITpd9lt";
-  fetch(gas)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-    });
-});
-
-document.addEventListener("click", function () {
-  navbarBurger.classList.toggle("is-active");
-  navDropdown.classList.toggle("is-active");
-});
-
-submitBtn.addEventListener("click", function(e){
     e.preventDefault();
     // console.log(spotIdInp)
     var spotifyID = spotIdInp.value;
     // var location = locationInp.value;
     city = locationInp.value;
     fetchResults(spotifyID);
+});
+
+const btn = document.getElementById('heart-icon');
+
+let index = 0;
+
+const colors = ['red', ''];
+
+btn.addEventListener('click', function onClick() {
+    btn.style.backgroundColor = colors[index];
+    btn.style.color = 'black';
+
+    index = index >= colors.length - 1 ? 0 : index + 1;
 });
