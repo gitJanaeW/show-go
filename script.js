@@ -8,6 +8,13 @@ const navbarItem = document.querySelector(".navbar-item");
 const spotIdInp = document.querySelector("#spotify-username");
 const locationInp = document.querySelector("#location");
 const submitBtn = document.querySelector("#submit-button");
+const btn = document.getElementById('heart-icon');
+
+// misc
+let city = "";
+let index = 0;
+const colors = ['red', ''];
+
 // ticket master genres
 let tmGenres = {
     alternative: "KnvZfZ7vAvv",
@@ -37,8 +44,6 @@ let tmGenres = {
     undefined: "KnvZfZ7vAe6",
     world: "KnvZfZ7vAeF"
 };
-// location
-let city = "";
 // spotify api key
 const options = {
     method: "GET",
@@ -120,8 +125,24 @@ function getEvent(genreId, location) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
+            getConcertValues(data);
         });
+}
+
+function getConcertValues(concerts){
+    console.log(concerts);
+    // img var
+    const ticketImg = concerts._embedded.events[0].images[0].url;
+    console.log(ticketImg);
+    // time var
+    let time = concerts._embedded.events[0].dates.start.localDate;
+    const finalTime = moment(time).format("MMM D, YYYY");
+    console.log(finalTime);
+    // event name var
+    const eventName = concerts._embedded.events[0].name;
+    console.log(eventName);
+
+    createResults(img, ticketImg, eventName);
 }
 
 submitBtn.addEventListener("click", function (e) {
@@ -133,15 +154,9 @@ submitBtn.addEventListener("click", function (e) {
     fetchResults(spotifyID);
 });
 
-const btn = document.getElementById('heart-icon');
-
-let index = 0;
-
-const colors = ['red', ''];
-
 btn.addEventListener('click', function onClick() {
     btn.style.backgroundColor = colors[index];
     btn.style.color = 'black';
 
-    index = index >= colors.length - 1 ? 0 : index + 1;
+    index = index >= colors.length - 1 ? 0 : index + 1; // If someone asked us to explain this line of code, would we know how to?
 });
