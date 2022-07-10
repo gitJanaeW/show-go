@@ -1,3 +1,16 @@
+// SONJA'S SPOTIFY ID FOR TESTING
+// 21gssgncgaiksynw4ely2rkea
+
+
+// VARIABLES
+// getting HTML elements
+const navbarBurger = document.querySelector(".navbar-burger");
+const navDropdown = document.querySelector("#nav-dropdown");
+const navbarItem = document.querySelector(".navbar-item");
+const spotIdInp = document.querySelector("#spot-id");
+const locationInp = document.querySelector("#location");
+const submitBtn = document.querySelector("#submitBtn");
+
 // ticket master genres
 let tmGenres = {
   alternative: "KnvZfZ7vAvv",
@@ -25,11 +38,10 @@ let tmGenres = {
   religious: "KnvZfZ7vAe7",
   rock: "KnvZfZ7vAeA",
   undefined: "KnvZfZ7vAe6",
-  world: "KnvZfZ7vAeF",
+  world: "KnvZfZ7vAeF"
 };
-
 // location
-let city = "ottawa";
+let city = "";
 // spotify api key
 const options = {
   method: "GET",
@@ -38,44 +50,49 @@ const options = {
     "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
   },
 };
-// spotify user playlist fetch
-fetch(
-  "https://spotify23.p.rapidapi.com/user_profile/?id=21gssgncgaiksynw4ely2rkea&playlistLimit=10&artistLimit=10",
-  options
-)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (response) {
-    let playlist = response.public_playlists[0].uri.slice(17);
-    getArtist(playlist);
-  });
-// spotify tracks fetch
-function getArtist(id) {
-  fetch(
-    "https://spotify23.p.rapidapi.com/playlist_tracks/?id=" +
-      id +
-      "&offset=0&limit=100",
+
+function fetchResults(spotifyID, location){
+    console.log(spotifyID)
+    // spotify user playlist fetch
+    fetch(
+    "https://spotify23.p.rapidapi.com/user_profile/?id=" + spotifyID + "&playlistLimit=10&artistLimit=10",
     options
-  )
+    )
     .then(function (response) {
-      return response.json();
+        return response.json();
     })
     .then(function (response) {
-      getGenre(response.items[0].track.artists[0].id);
+        let playlist = response.public_playlists[0].uri.slice(17);
+        getArtist(playlist);
     });
+    // spotify tracks fetch
+    function getArtist(id) {
+    fetch(
+        "https://spotify23.p.rapidapi.com/playlist_tracks/?id=" +
+        id +
+        "&offset=0&limit=100",
+        options
+    )
+        .then(function (response) {
+        return response.json();
+        })
+        .then(function (response) {
+        getGenre(response.items[0].track.artists[0].id);
+        });
+    }
+    // spotify artist fetch
+    function getGenre(artistId) {
+    fetch("https://spotify23.p.rapidapi.com/artists/?ids=" + artistId, options)
+        .then(function (response) {
+        return response.json();
+        })
+        .then(function (response) {
+        let spotifyGenres = response.artists[0].genres;
+        checkGenres(spotifyGenres, tmGenres);
+        });
+    }
 }
-// spotify artist fetch
-function getGenre(artistId) {
-  fetch("https://spotify23.p.rapidapi.com/artists/?ids=" + artistId, options)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (response) {
-      let spotifyGenres = response.artists[0].genres;
-      checkGenres(spotifyGenres, tmGenres);
-    });
-}
+
 // fucntion to see if genres from spotify match with any ticket master genres
 function checkGenres(spotifyGenres, tmGenres) {
   let genreOptions = Object.keys(tmGenres);
@@ -90,7 +107,6 @@ function checkGenres(spotifyGenres, tmGenres) {
       for (let i = 0; i < splitGenres.length; i++) {
         if (tmGenres[splitGenres[i]] + 1) {
           getEvent(tmGenres[splitGenres[i]], city);
-
           return;
         }
       }
@@ -98,12 +114,13 @@ function checkGenres(spotifyGenres, tmGenres) {
   }
 }
 // ticket master fetch for events by genre id and city
-function getEvent(genreId, city) {
+function getEvent(genreId, location) {
+    console.log(location)
   var gas =
     "https://app.ticketmaster.com/discovery/v2/events.json?genreId=" +
     genreId +
     "&city=" +
-    city +
+    location +
     "&apikey=pUF7AkmB2U2SWPEbs1grVeUmhITpd9lt";
   fetch(gas)
     .then(function (response) {
@@ -114,10 +131,16 @@ function getEvent(genreId, city) {
     });
 }
 
-const navbarBurger = document.querySelector(".navbar-burger");
-const navDropdown = document.querySelector("#nav-dropdown");
-const navbarItem = document.querySelector(".navbar-item");
 document.addEventListener("click", function () {
   navbarBurger.classList.toggle("is-active");
   navDropdown.classList.toggle("is-active");
+});
+
+submitBtn.addEventListener("click", function(e){
+    e.preventDefault();
+    // console.log(spotIdInp)
+    var spotifyID = spotIdInp.value;
+    // var location = locationInp.value;
+    city = locationInp.value;
+    fetchResults(spotifyID);
 });
