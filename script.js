@@ -1,36 +1,7 @@
-// var formEl = document.querySelector("#event-picker")
-// var eventsToSeeEl = document.querySelector("#events-to-see")
-
-// var createEventHandler = function (event) {
-//     event.preventDefault();
-//     var usernnameInput = document.querySelector("input[name='spot-id']").value;
-//     var locationInput = document.querySelector("input[name='city']").value;
-
-//     //create event list item
-//     var eventlistItemEl = document.createElement("li");
-//     eventlistItemEl.className = "event-list-item";
-
-//     //create div to hold events list and add to 
-//     var eventInfoEl = document.createElement("div");
-//     // give it a class name
-//     eventInfoEl, className = "event-info";
-//     // add HTML content to div
-//     eventInfoEl.innerHTML = "</h3><span class='Events'>" + locationInput + "</span>";
-
-//     eventlistItemEl.appendChild(eventInfoEl);
-
-//     eventsToSeeEl.appendChild(eventlistItemEl);
-// }
-
-// formEl.addEventListener("submit", createEventHandler);
-
 // SONJA'S SPOTIFY ID FOR TESTING
 // 21gssgncgaiksynw4ely2rkea
 // VARIABLES
 // getting HTML elements
-const navbarBurger = document.querySelector(".navbar-burger");
-const navDropdown = document.querySelector("#nav-dropdown");
-const navbarItem = document.querySelector(".navbar-item");
 const spotIdInp = document.querySelector("#spotify-username");
 const locationInp = document.querySelector("#location");
 const submitBtn = document.querySelector("#submit-button");
@@ -63,6 +34,7 @@ let tmGenres = {
     undefined: "KnvZfZ7vAe6",
     world: "KnvZfZ7vAeF"
 };
+
 // location
 let city = "";
 // spotify api key
@@ -73,6 +45,7 @@ const options = {
         "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
     },
 };
+
 function fetchResults(spotifyID, location) {
     console.log(spotifyID)
     // spotify user playlist fetch
@@ -131,7 +104,9 @@ function checkGenres(spotifyGenres, tmGenres) {
             }
         }
     }
-}
+};
+
+
 // ticket master fetch for events by genre id and city
 function getEvent(genreId, location) {
     console.log(location)
@@ -148,12 +123,29 @@ function getEvent(genreId, location) {
         .then(function (data) {
             console.log(data);
         });
-}
-// document.addEventListener("click", function () {
-//     navbarBurger.classList.toggle("is-active");
-//     navDropdown.classList.toggle("is-active");
-// });
+      }
 submitBtn.addEventListener("click", function (e) {
+  var gas =
+    "https://app.ticketmaster.com/discovery/v2/events.json?genreId=" +
+    genreId +
+    "&city=" +
+    location +
+    "&apikey=pUF7AkmB2U2SWPEbs1grVeUmhITpd9lt";
+  fetch(gas)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    });
+});
+
+document.addEventListener("click", function () {
+  navbarBurger.classList.toggle("is-active");
+  navDropdown.classList.toggle("is-active");
+});
+
+submitBtn.addEventListener("click", function(e){
     e.preventDefault();
     // console.log(spotIdInp)
     var spotifyID = spotIdInp.value;
