@@ -1,3 +1,29 @@
+// var formEl = document.querySelector("#event-picker")
+// var eventsToSeeEl = document.querySelector("#events-to-see")
+
+// var createEventHandler = function (event) {
+//     event.preventDefault();
+//     var usernnameInput = document.querySelector("input[name='spot-id']").value;
+//     var locationInput = document.querySelector("input[name='city']").value;
+
+//     //create event list item
+//     var eventlistItemEl = document.createElement("li");
+//     eventlistItemEl.className = "event-list-item";
+
+//     //create div to hold events list and add to 
+//     var eventInfoEl = document.createElement("div");
+//     // give it a class name
+//     eventInfoEl, className = "event-info";
+//     // add HTML content to div
+//     eventInfoEl.innerHTML = "</h3><span class='Events'>" + locationInput + "</span>";
+
+//     eventlistItemEl.appendChild(eventInfoEl);
+
+//     eventsToSeeEl.appendChild(eventlistItemEl);
+// }
+
+// formEl.addEventListener("submit", createEventHandler);
+
 // SONJA'S SPOTIFY ID FOR TESTING
 // 21gssgncgaiksynw4ely2rkea
 // VARIABLES
@@ -123,7 +149,10 @@ function getEvent(genreId, location) {
             console.log(data);
         });
 }
-
+// document.addEventListener("click", function () {
+//     navbarBurger.classList.toggle("is-active");
+//     navDropdown.classList.toggle("is-active");
+// });
 submitBtn.addEventListener("click", function (e) {
     e.preventDefault();
     // console.log(spotIdInp)
@@ -145,4 +174,23 @@ btn.addEventListener('click', function onClick() {
 
     index = index >= colors.length - 1 ? 0 : index + 1;
 });
-
+// var setMyFavorite = function () {
+//     var elem = document.getElementById("#heart-icon");
+//     //Gets the RGB value
+//     var theColor = window.getComputedStyle(elem, null).getPropertyValue("background-color");
+//     var hex = rgb2hex(theColor);
+//     if (hex == "#555555") {
+//         elem.style.backgroundColor = "#ffffff";
+//     }
+//     else if (hex == "#ffffff") {
+//         elem.style.backgroundColor = "#555555";
+//     }
+//     //Convert RGB to Hex value
+//     var rgb2hex = function (rgb) {
+//         rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+//         function hex(x) {
+//             return ("0" + parseInt(x).toString(16)).slice(-2);
+//         }
+//         return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+//     }
+// }
