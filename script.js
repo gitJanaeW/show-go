@@ -16,6 +16,9 @@ let city = "";
 let index = 0;
 const colors = ['red', ''];
 
+// incrememntor
+
+
 // ticket master genres
 let tmGenres = {
     alternative: "KnvZfZ7vAvv",
@@ -160,8 +163,9 @@ function createResults(ticketImg, finalTime, eventName) {
     columns.classList = "columns";
 
     var blankDiv = document.createElement("div");
-    blankDiv.innerHTML = "<div class='card-image'><img class='is-rounded ml-6 mr-4' style='width:275px' src='" + ticketImg + "'></div>";
+    blankDiv.innerHTML = "<div class='card-image'><img class='is-rounded ml-6 mr-4 img' src='" + ticketImg + "'></div>";
 
+    // can turn lines 167-169 into innerHTML
     var column = document.createElement("div");
     column.classList = "column p-0 mt-4 ml-6";
     var columnClasses = ["title", "title is-4", "subtitle is-6"];
@@ -185,7 +189,7 @@ function createResults(ticketImg, finalTime, eventName) {
     var buyTicketsBtn = document.createElement("button");
     buyTicketsBtn.classList = "button mr-5 mb-5 is-light is-rounded has-text-centred my-2 p-5";
     buyTicketsBtn.setAttribute("type", "submit");
-    buyTicketsBtn.setAttribute("id", "submit-button");
+    buyTicketsBtn.setAttribute("id", "buy-button");
     buyTicketsBtn.textContent = "Buy Tickets";
 
     var cardImg = document.createElement("div");

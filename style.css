@@ -12,6 +12,10 @@
 }
 
 * */
+
+.img{
+    width: 275px;
+}
 /*hero style start*/
 .hero-body {
     background-image: url("../ShowGo/assets/images/concerthandwithbubble.png");
