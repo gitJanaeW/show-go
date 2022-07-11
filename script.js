@@ -130,9 +130,9 @@ function getEvent(genreId, location) {
         });
 }
 
-function getConcertValues(concerts){
+function getConcertValues(concerts) {
     console.log(concerts);
-    for(var i = 0; i < 5; i++){
+    for (var i = 0; i < 5; i++) {
         // img var
         const ticketImg = concerts._embedded.events[i].images[i].url;
         // time var
@@ -140,12 +140,12 @@ function getConcertValues(concerts){
         const finalTime = moment(time).format("MMM D, YYYY");
         // event name var
         const eventName = concerts._embedded.events[i].name;
-        
+
         createResults(ticketImg, finalTime, eventName);
     }
 }
 
-function createResults(ticketImg, finalTime, eventName){
+function createResults(ticketImg, finalTime, eventName) {
     // create DOm elements
     var concertCard = document.createElement("div");
     concertCard.classList = "card";
@@ -158,7 +158,7 @@ function createResults(ticketImg, finalTime, eventName){
 
     var columns = document.createElement("div");
     columns.classList = "columns";
-    
+
     var blankDiv = document.createElement("div");
     blankDiv.innerHTML = "<div class='card-image'><img class='is-rounded ml-6 mr-4' style='width:275px' src='" + ticketImg + "'></div>";
 
@@ -166,13 +166,13 @@ function createResults(ticketImg, finalTime, eventName){
     column.classList = "column p-0 mt-4 ml-6";
     var columnClasses = ["title", "title is-4", "subtitle is-6"];
     var columnContent = [eventName, finalTime, "day + time"];
-    for(var x = 0; x < columnClasses.length; x++){
+    for (var x = 0; x < columnClasses.length; x++) {
         var columnP = document.createElement("p");
         columnP.classList = columnClasses[x];
         columnP.textContent = columnContent[x];
         column.appendChild(columnP);
     }
-    
+
     var ticketBtns = document.createElement("div");
     ticketBtns.classList = "p-0 mr-3 is-flex is-flex-direction-column is-justify-content-space-between is-align-items-flex-end";
     var watchlistBtn = document.createElement("button");
@@ -187,7 +187,7 @@ function createResults(ticketImg, finalTime, eventName){
     buyTicketsBtn.setAttribute("type", "submit");
     buyTicketsBtn.setAttribute("id", "submit-button");
     buyTicketsBtn.textContent = "Buy Tickets";
-    
+
     var cardImg = document.createElement("div");
     cardImg.classList = "card-image";
 
@@ -219,6 +219,38 @@ submitBtn.addEventListener("click", function (e) {
     fetchResults(spotifyID);
 });
 
+const btn = document.getElementById('heart-icon');
+
+let index = 0;
+
+const colors = ['red', ''];
+
+btn.addEventListener('click', function onClick() {
+    btn.style.backgroundColor = colors[index];
+    btn.style.color = 'black';
+
+    index = index >= colors.length - 1 ? 0 : index + 1;
+});
+// var setMyFavorite = function () {
+//     var elem = document.getElementById("#heart-icon");
+//     //Gets the RGB value
+//     var theColor = window.getComputedStyle(elem, null).getPropertyValue("background-color");
+//     var hex = rgb2hex(theColor);
+//     if (hex == "#555555") {
+//         elem.style.backgroundColor = "#ffffff";
+//     }
+//     else if (hex == "#ffffff") {
+//         elem.style.backgroundColor = "#555555";
+//     }
+//     //Convert RGB to Hex value
+//     var rgb2hex = function (rgb) {
+//         rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+//         function hex(x) {
+//             return ("0" + parseInt(x).toString(16)).slice(-2);
+//         }
+//         return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+//     }
+// }
 // btn.addEventListener('click', function onClick() {
 //     btn.style.backgroundColor = colors[index];
 //     btn.style.color = 'black';
