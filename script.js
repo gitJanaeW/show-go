@@ -58,8 +58,8 @@ function fetchResults(spotifyID, location) {
   // spotify user playlist fetch
   fetch(
     "https://spotify23.p.rapidapi.com/user_profile/?id=" +
-      spotifyID +
-      "&playlistLimit=10&artistLimit=10",
+    spotifyID +
+    "&playlistLimit=10&artistLimit=10",
     options
   )
     .then(function (response) {
@@ -73,8 +73,8 @@ function fetchResults(spotifyID, location) {
   function getArtist(id) {
     fetch(
       "https://spotify23.p.rapidapi.com/playlist_tracks/?id=" +
-        id +
-        "&offset=0&limit=100",
+      id +
+      "&offset=0&limit=100",
       options
     )
       .then(function (response) {

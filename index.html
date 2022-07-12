@@ -16,7 +16,7 @@
             <nav class="navbar">
                 <!--Brand Loga-->
                 <div class="navbar-brand">
-                    <a class="navbar-item is-size-1 ml-3">ShowGo
+                    <a href="" class="navbar-item is-size-1 ml-3">ShowGo
                     </a>
                     <a class="navbar-burger" id="burger">
                         <span></span>
@@ -27,8 +27,8 @@
                 <div class="navbar-menu" id="navbar-links">
                     <div class="navbar-end">
                         <a href="./username.html" class="navbar-item ml-3">Find Your Username</a>
-                        <a href="#your-watchlist" class="navbar-item ml-3">Your Watchlist</a>
-                        <a href="#" class="navbar-item ml-3">Contact Us</a>
+                        <!-- <a href="#your-watchlist" class="navbar-item ml-3">Your Watchlist</a>
+                        <a href="#" class="navbar-item ml-3">Contact Us</a> -->
                     </div>
             </nav>
         </div>
@@ -44,14 +44,13 @@
                         <h2 class="is-size-4-mobile is-size-2-desktop subtitle mb-0 has-text-dark">Your Way.</h2>
                     </div>
                     <!--To The Right, ShowGo to the rescue-->
-                    <div class="column is-12-mobile is-6-tablet is-6-desktop is-offset-1">
-                        <h3
-                            class="is-size-3-mobile is-size-3-desktop title has-text-dark has-text-centered mt-6 mb-0 mr-6">
+                    <div class="column is-12-mobile is-6-tablet is-6-desktop" id="dancing-text">
+                        <h3 class="is-size-5-mobile is-size-3-desktop title has-text-dark has-text-centered">
                             LESS
                             SEARCHING,
                             MORE DANCING!</h3>
-                        <div class="column is-two-thirds">
-                            <h4 class="is-size-5-mobile is-size-4-desktop subtitle has-text-dark ml-6 has-text-centered"
+                        <div class="column is-two-thirds is-narrow-mobile is-align-content-center" id="show-text">
+                            <h4 class="is-size-5-mobile is-size-4-desktop subtitle has-text-dark has-text-centered ml-6"
                                 id="intro-section-2">
                                 Let
                                 SHOWGO do
@@ -74,7 +73,7 @@
                 <br>
                 <br>
                 <div class="columns background2 has-text-white">
-                    <div class="column is-6-tablet is-6">
+                    <div class="column is-12-mobile is-6-tablet is-size-6-mobile has-text-centered">
                         <p class="is-size-4">Start with your Spotify Username and desired location and you'll
                             see
                             events
@@ -83,7 +82,7 @@
                             to based on your listening history!</p>
                     </div>
 
-                    <div class="column is-6-tablet has-text-centered">
+                    <div class="column is-6-tablet has-text-centered is-size-6-mobile">
                         <p class="is-size-4 has-text-centered">Not sure how to find your Username?</p>
                         <a href="./username.html" class="find-username">Click Here</a>
                     </div>
@@ -124,36 +123,37 @@
         </section>
 
         <!--Event Dom Section-->
-        <section class="section concert-list">
-            <!-- Example card -->
-            <div class="card">
+        <!-- <section class="section concert-list"> -->
+        <!-- Example card -->
+        <!-- <div class="card">
                 <div class="card-content px-0">
                     <div class="columns">
                         <div>
                             <div class="card-image">
-                                <img class="is-rounded ml-6 mr-4" src="./assets/images/aconcert.jpeg">
+                                <img class="is-rounded ml-6 mr-4 img" src="./assets/images/aconcert.jpeg">
                             </div>
                         </div>
                         <div class="column p-0 mt-4 ml-6">
                             <p class="title">80s & 90s Rock Rewind</p>
                             <p class="title is-4">date</p>
-                            <p class="subtitle is-6">day + time</p>
+                            <p class="subtitle is-6" id="time-of-event">day + time</p>
                         </div>
-                        <div class="p-0 mr-3 is-flex is-flex-direction-column is-justify-content-space-between is-align-items-flex-end">
+                        <div
+                            class="p-0 mr-3 is-flex is-flex-direction-column is-justify-content-space-between is-align-items-flex-end">
                             <button class="button mt-4 columns mr-6" type="submit" value="submit input"
                                 id="heart-icon">♡</button>
                             <button class="button mr-5 mb-5 is-light is-rounded has-text-centred my-2 p-5" type="submit"
                                 value="submit input" id="submit-button">Buy Tickets</button>
-                        <div>
+                            <div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
+        </section> -->
 
     </section>
 
     <!--watchlist-->
-    <section class="section has-background-dark">
+    <!-- <section class="section has-background-dark">
         <div class="column">
             <div class="columns has-text-white" id="your-watchlist">
                 <h2 class="px-auto has-text-white my-6 mx-auto is-size-3 is-flex is-justify-content-center mb-6">Your
@@ -165,15 +165,15 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!--Footer-->
-    <section class="footer has-text-white has-background-dark">
+    <!-- <section class="footer has-text-white has-background-dark">
         <p>This is the footer!</p>
 
 
 
-    </section>
+    </section> -->
 
 </body>
 <script src="index.js"></script>
