@@ -31,207 +31,65 @@
                         <a href="#" class="navbar-item ml-3">Contact Us</a>
                     </div>
             </nav>
-            <!-- <nav class="navbar is-fixed-top has-background-success-dark is-success-dark">
-                <div class="navbar-brand">
-                    <h1 href="#" class="app-name navbar-item m-0 has-text-white-bis mx-2">SHOWGO</h1>
-                    <!-- This creates the "burger" (the 3 white lines) -->
-            <!-- <a role="button" aria-label="menu" aria-expanded="false" class="navbar-burger" data-target="navBar">
-                        <span class="has-background-white"></span>
-                        <span class="has-background-white"></span>
-                        <span class="has-background-white"></span>
-                    </a>
-                </div>
-                <!-- Hidden until JS shows them -->
-            <!-- <div id="nav-dropdown" class="navbar-menu">
-                    <div class="navbar-end">
-                        <!-- These have some kind of ugly default hover styles that we'll need to change -->
-            <!-- <a href="#" class="navbar-item my-auto has-text-white">Find Your ID</a>
-                        <a href="#" class="navbar-item my-auto has-text-white">Your Watchlist</a>
-                        <a href="#" class="navbar-item my-auto has-text-white">Contact Us</a>
+        </div>
+
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns background">
+                    <!--To the left, what we do-->
+                    <div class="column is-12-mobile is-6-tablet is-6-desktop">
+                        <h1 class="is-size-3-mobile is-size-1-desktop title mt-0 has-text-dark">Find Your
+                            Sound,</h1>
+                        <h2 class="is-size-4-mobile is-size-2-desktop subtitle mb-0 has-text-dark">Your Way.</h2>
+                    </div>
+                    <!--To The Right, ShowGo to the rescue-->
+                    <div class="column is-12-mobile is-6-tablet is-6-desktop is-offset-1">
+                        <h3
+                            class="is-size-3-mobile is-size-3-desktop title has-text-dark has-text-centered mt-6 mb-0 mr-6">
+                            LESS
+                            SEARCHING,
+                            MORE DANCING!</h3>
+                        <div class="column is-two-thirds">
+                            <h4 class="is-size-5-mobile is-size-4-desktop subtitle has-text-dark ml-6 has-text-centered"
+                                id="intro-section-2">
+                                Let
+                                SHOWGO do
+                                the
+                                heavy-lifting. Give us your
+                                Spotify ID
+                                and
+                                we’ll give you artists that you’ll <strong class="has-text-black">LOVE</strong> at a
+                                concert
+                                near you!</h4>
+                        </div>
                     </div>
                 </div>
-            </nav> --> --> --> -->
-            </header>
-            <!--Hero Background-->
-            <section class="hero-banner">
-                <div class="card">
-                    <div class="card-image" class="image is-128x128">
-                        <img src="./assets/images/concert-hand.png" alt="A purple hand on a bright yellow backdrop"
-                            class="content-hand-img">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="columns background2 has-text-white">
+                    <div class="column is-6-tablet is-6">
+                        <p class="is-size-4">Start with your Spotify Username and desired location and you'll
+                            see
+                            events
+                            to
+                            go
+                            to based on your listening history!</p>
                     </div>
-                </div>
-            </section>
-            <!--Hero Section Ends-->
 
-            <!--Into paragraph-->
-            <section id="into-paragraph">
-                <container>
-                    <div class="card-content is-overlay">
-                        <div class="media">
-                            <div class="media-left"></div>
-                            <div class="box has-background-grey-light is-relative">
-                                <h2>WELCOME TO SHOWGO</h2>
-                                <p>Tired of trying to figure out what concert to go to? ShowGo provides you with events
-                                    that
-                                    match
-                                    your fave
-                                    Spotify playlists</p>
-                                <container>
-                            </div>
-                </container>
-            </section>
-
-            <div class="is-divider has-background-white"></div> <!-- Not showing -->
-            <section>
-                <h2 class="px-auto has-text-white my-6 mx-auto is-size-3">Find Your Event</h2>
-                <form id="submit-btn" class="is-flex is-flex-direction-column is-align-items-center">
-                    <label for="spot-id" class="has-text-white is-size-5 my-3">Your Spotify ID:</label>
-                    <input id="spot-id" type=" text” placeholder=" Your ID" name="spot-id"
-                        value="21gssgncgaiksynw4ely2rkea" class="input is-rounded py-2" required /><br>
-                    <label for="location" class="has-text-white is-size-5 my-3">Location:</label>
-                    <input id="location" type="text" placeholder="Your City" class="input is-rounded py-2"
-                        required /><br>
-                    <button id="submitBtn" class="button is-rounded my-4">Search for Shows</button>
-                </form>
-            </section>
-            <section>
-                <div class="results" visibility="hidden">
-                </div>
-            </section>
-
-
-            <!--Event Section (Hidden until Called VIA JS), will require append child-->
-            <section class="card has-background-grey-darker">
-                <container class="event-cards is-centered has-text-white has-background-grey-darker">
-                    <div class="event-list" id="event-item">
-                        <div class="card-image">
-                            <figure class="image is-2by2">
-                                <img src="./assets/images/aconcert.jpeg"></li>
-                            </figure>
-                        </div>
-                        <div class="event-text">
-                            Event 1
-                        </div>
-                        <br>
-
-                        <div class="event-list" id="event-item">
-                            <div class="card-image">
-                                <figure class="image is-2by2">
-                                    <img src="./assets/images/aconcert.jpeg"></li>
-                                </figure>
-                            </div>
-                            <div class="event-text">
-                                Event 2
-                            </div>
-                            <br>
-
-                            <div class="event-list" id="event-item">
-                                <div class="card-image">
-                                    <figure class="image is-2by2">
-                                        <img src="./assets/images/aconcert.jpeg"></li>
-                                    </figure>
-                                </div>
-                                <div class="event-text">
-                                    Event 3
-                                </div>
-                                <br>
-
-                                <div class="event-list" id="event-item">
-                                    <div class="card-image">
-                                        <figure class="image is-2by2">
-                                            <img src="./assets/images/aconcert.jpeg"></li>
-                                        </figure>
-                                    </div>
-                                    <div class="event-text">
-                                        Event 4
-                                    </div>
-                                    <br>
-
-                                    <div class="event-list" id="event-item">
-                                        <div class="card-image">
-                                            <figure class="image is-2by2">
-                                                <img src="./assets/images/aconcert.jpeg"></li>
-                                            </figure>
-                                        </div>
-                                        <div class="event-text">
-                                            Event 5
-                                        </div>
-                                        <br>
-
-                                        <button type="button" class="button is-rounded my-4" id="show-more-events">Show
-                                            More...</button>
-                                    </div>
-                </container>
-            </section>
-
-
-            <!-- If no watchlist items, show text that says "You have nothing on your watchlist” -->
-            <!--watchlist-->
-            <h2 class="px-auto has-text-white my-6 mx-auto is-size-3 is-flex is-justify-content-center mb-6">Your
-                Watchlist</h2>
-            <div>
-                <p class="has-text-white" id="watch-list-empty" visibility="hidden">You have nothing on your
-                    watchlist.
-                </p>
-            </div>
-
-            <!-- Hero content: will be in the middle -->
-            <div class="hero-body">
-                <div class="container">
-                    <div class="columns background">
-                        <!--To the left, what we do-->
-                        <div class="column is-12-mobile is-6-tablet is-6-desktop">
-                            <h1 class="is-size-3-mobile is-size-1-desktop title mt-0 has-text-dark">Find Your
-                                Sound,</h1>
-                            <h2 class="is-size-4-mobile is-size-2-desktop subtitle mb-0 has-text-dark">Your Way.</h2>
-                        </div>
-                        <!--To The Right, ShowGo to the rescue-->
-                        <div class="column is-12-mobile is-6-tablet is-6-desktop is-offset-1">
-                            <h3
-                                class="is-size-3-mobile is-size-3-desktop title has-text-dark has-text-centered mt-6 mb-0 mr-6">
-                                LESS
-                                SEARCHING,
-                                MORE DANCING!</h3>
-                            <div class="column is-two-thirds">
-                                <h4 class="is-size-5-mobile is-size-4-desktop subtitle has-text-dark ml-6 has-text-centered"
-                                    id="intro-section-2">
-                                    Let
-                                    SHOWGO do
-                                    the
-                                    heavy-lifting. Give us your
-                                    Spotify ID
-                                    and
-                                    we’ll give you artists that you’ll <strong class="has-text-black">LOVE</strong> at a
-                                    concert
-                                    near you!</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="columns background2 has-text-white">
-                        <div class="column is-6-tablet is-6">
-                            <p class="is-size-4">Start with your Spotify Username and desired location and you'll
-                                see
-                                events
-                                to
-                                go
-                                to based on your listening history!</p>
-                        </div>
-
-                        <div class="column is-6-tablet has-text-centered">
-                            <p class="is-size-4 has-text-centered">Not sure how to find your Username?</p>
-                            <a href="./username.html" class="find-username">Click Here</a>
-                        </div>
+                    <div class="column is-6-tablet has-text-centered">
+                        <p class="is-size-4 has-text-centered">Not sure how to find your Username?</p>
+                        <a href="./username.html" class="find-username">Click Here</a>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
     </section>
