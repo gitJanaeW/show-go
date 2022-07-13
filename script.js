@@ -47,6 +47,7 @@ let tmGenres = {
   world: "KnvZfZ7vAeF",
 };
 
+// local storage auto input
 spotIdInp.value = localStorage.getItem("id");
 locationInp.value = localStorage.getItem("city");
 
@@ -58,14 +59,14 @@ const options = {
     "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
   },
 };
-function fetchResults(spotifyID, location) {
-  console.log(spotifyID);
+// fetch user profile
+function fetchResults(spotifyID) {
   submitBtn.setAttribute("disabled", "");
   // spotify user playlist fetch
   fetch(
     "https://spotify23.p.rapidapi.com/user_profile/?id=" +
-    spotifyID +
-    "&playlistLimit=10&artistLimit=10",
+      spotifyID +
+      "&playlistLimit=10&artistLimit=10",
     options
   )
     .then(function (response) {
@@ -79,8 +80,8 @@ function fetchResults(spotifyID, location) {
   function getArtist(id) {
     fetch(
       "https://spotify23.p.rapidapi.com/playlist_tracks/?id=" +
-      id +
-      "&offset=0&limit=100",
+        id +
+        "&offset=0&limit=100",
       options
     )
       .then(function (response) {
@@ -122,7 +123,6 @@ function checkGenres(spotifyGenres, tmGenres) {
 }
 // ticket master fetch for events by genre id and city
 function getEvent(genreId, location) {
-  console.log(location);
   var gas =
     "https://app.ticketmaster.com/discovery/v2/events.json?genreId=" +
     genreId +
@@ -138,8 +138,8 @@ function getEvent(genreId, location) {
     });
 }
 
+// funtion to sort info for the events needed
 function getConcertValues(concerts) {
-  console.log(concerts);
   for (var i = 0; i < 10; i++) {
     // img var
     const ticketImg = concerts._embedded.events[i].images[i].url;
@@ -148,20 +148,38 @@ function getConcertValues(concerts) {
     const finalTime = moment(time).format("MMM D, YYYY");
     // event name var
     const eventName = concerts._embedded.events[i].name;
+    // purchase url for events
     const buyTicketUrl = concerts._embedded.events[i].url;
-
+    // concert start time
     const startTime = concerts._embedded.events[i].dates.start.localTime;
-    // Prepend any date. Use your birthday.
-    const timeString12hr = new Date('2022-05-18T' + startTime + 'Z')
-      .toLocaleTimeString('en-US',
-        {timeZone:'UTC',hour12:true,hour:'numeric',minute:'numeric'}
-    );
+    // convert 24 hours to 12 hours
+    const timeString12hr = new Date(
+      "2022-05-18T" + startTime + "Z"
+    ).toLocaleTimeString("en-US", {
+      timeZone: "UTC",
+      hour12: true,
+      hour: "numeric",
+      minute: "numeric",
+    });
 
-    createResults(ticketImg, finalTime, eventName, buyTicketUrl, timeString12hr);
+    createResults(
+      ticketImg,
+      finalTime,
+      eventName,
+      buyTicketUrl,
+      timeString12hr
+    );
   }
 }
 
-function createResults(ticketImg, finalTime, eventName, buyTicketUrl, timeString12hr) {
+// function for creating the individual event cards
+function createResults(
+  ticketImg,
+  finalTime,
+  eventName,
+  buyTicketUrl,
+  timeString12hr
+) {
   // create DOm elements
   var concertCard = document.createElement("div");
   concertCard.classList = "card";
@@ -184,7 +202,11 @@ function createResults(ticketImg, finalTime, eventName, buyTicketUrl, timeString
   var column = document.createElement("div");
   column.classList = "column p-0 mt-4 ml-6";
   var columnClasses = ["title", "title is-4", "subtitle is-6"];
-  var columnContent = [eventName, finalTime, "Doors open at " + timeString12hr + "!"];
+  var columnContent = [
+    eventName,
+    finalTime,
+    "Doors open at " + timeString12hr + "!",
+  ];
   for (var x = 0; x < columnClasses.length; x++) {
     var columnP = document.createElement("p");
     columnP.classList = columnClasses[x];
@@ -195,13 +217,6 @@ function createResults(ticketImg, finalTime, eventName, buyTicketUrl, timeString
   var ticketBtns = document.createElement("div");
   ticketBtns.classList =
     "p-0 mr-3 is-flex is-flex-direction-column is-justify-content-space-between is-align-items-flex-end";
-  // var watchlistBtn = document.createElement("button");
-  // watchlistBtn.classList = "button mt-4 columns mr-6";
-  // watchlistBtn.setAttribute("type", "submit");
-  // watchlistBtn.setAttribute("value", "submit input");
-  // watchlistBtn.setAttribute("id", "heart-icon");
-  // watchlistBtn.textContent = "♡";
-
   var buyTicketsBtn = document.createElement("button");
   buyTicketsBtn.classList =
     "button mr-5 mb-5 is-light is-rounded has-text-centred my-2 p-5";
@@ -230,7 +245,6 @@ function createResults(ticketImg, finalTime, eventName, buyTicketUrl, timeString
   columns.appendChild(blankDiv);
   columns.appendChild(column);
   columns.appendChild(ticketBtns);
-  // ticketBtns.appendChild(watchlistBtn);
   ticketBtns.appendChild(buyTicketsBtn);
   loader.className = "";
 
@@ -238,35 +252,25 @@ function createResults(ticketImg, finalTime, eventName, buyTicketUrl, timeString
   submitBtn.removeAttribute("disabled");
 }
 
-function clearResults(){
-  while(concertList.firstChild){
+function clearResults() {
+  while (concertList.firstChild) {
     concertList.removeChild(concertList.firstChild);
   }
 }
 
+// event listener to begin the search for events
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
   loader.className = "loader";
-  // console.log(spotIdInp)
-  if(concertList.childElementCount){
+
+  if (concertList.childElementCount) {
     clearResults();
   }
   var spotifyID = spotIdInp.value;
   localStorage.setItem("id", spotifyID);
-  // var location = locationInp.value;
+
   city = locationInp.value;
   localStorage.setItem("city", city);
-  
+
   fetchResults(spotifyID);
 });
-
-// btn.addEventListener('click', function onClick() {
-//     btn.style.backgroundColor = colors[index];
-//     btn.style.color = 'black';
-
-//     index = index >= colors.length - 1 ? 0 : index + 1; // If someone asked us to explain this line of code, would we know how to?
-// });
-
-// watchlistBtn.addEventListener("click", function(){
-//     watchlistBtn.textContent = "♥"
-// });
