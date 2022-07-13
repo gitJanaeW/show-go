@@ -1,14 +1,156 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+:root {
+  --primary-color: #d809d1;
+  --secondary-color: #f7e5a3;
+  --third-color: white;
 }
 
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
-
-/* .has-bg-img {
-    background: url('/assets/images/concert-hand.png')center center;
-    background-size: cover;
+img {
+  width: 275px;
+}
+.username-image {
+  width: auto;
+  border-radius: 10px;
 }
 
-* */
+.navbar-item:hover {
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  opacity: 0.7;
+}
+
+.card {
+  transition: all 0.5s ease-in-out;
+  margin-bottom: 4px;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/*hero style start*/
+.hero-body {
+  background-image: url("../ShowGo/assets/images/concerthandwithbubble.png");
+  height: 1000px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-body2 {
+  background-image: url("../ShowGo/assets/images/concert-hand.png");
+  height: 1500px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.background2 {
+  background-color: black;
+  opacity: 0.8;
+  border-radius: 25px;
+}
+
+#dancing-text {
+  margin-left: 50px;
+  padding-top: 70px;
+  padding-bottom: 0%;
+  display: inline;
+}
+
+#show-text {
+  margin-left: 85px;
+  padding-bottom: 30px;
+  display: inline;
+}
+
+.textcolor {
+  color: var(--third-color);
+  opacity: 1;
+}
+
+.find-username {
+  font-size: 80px;
+  -webkit-text-stroke: 2px var(--secondary-color);
+  /* width and color */
+  color: var(--third-color);
+  transition: all 0.3s ease-in-out;
+}
+.find-username:hover {
+  opacity: 0.7;
+}
+
+#loader {
+  height: 100px;
+  width: 100px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.input:focus {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--primary-color);
+}
+#submit-button {
+  color: var(--primary-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--primary-color);
+  transition: all 0.3s ease-in-out 0s;
+}
+#submit-button:hover {
+  background-color: var(--primary-color);
+  color: var(--third-color);
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+@media (min-width: 150px) and (max-width: 655px) {
+  .background {
+    background-color: var(--secondary-color);
+    opacity: 1;
+    text-align: center;
+    border-radius: 25px;
+    height: 310px;
+    width: auto;
+    padding: 0%;
+  }
+
+  .background2 {
+    height: 300px;
+    width: auto;
+  }
+
+  .find-username {
+    font-size: 25px;
+  }
+
+  #dancing-text {
+    justify-content: center;
+    padding: 0%;
+    margin-left: 0%;
+  }
+
+  #show-text {
+    justify-content: center;
+    margin-left: 0%;
+    padding-bottom: 0%;
+  }
+
+  #intro-section-2 {
+    padding-right: 60px;
+  }
+
+  #time-of-event {
+    align-content: center;
+  }
+
+  .img {
+    width: 200px;
+  }
+}
+
+.footer {
+  height: 50vh;
+}
