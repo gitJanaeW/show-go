@@ -60,7 +60,7 @@ const options = {
 };
 function fetchResults(spotifyID, location) {
   console.log(spotifyID);
-  submitBtn.style.display = "none";
+  submitBtn.setAttribute("disabled", "");
   // spotify user playlist fetch
   fetch(
     "https://spotify23.p.rapidapi.com/user_profile/?id=" +
@@ -177,7 +177,7 @@ function createResults(ticketImg, finalTime, eventName, buyTicketUrl, timeString
 
   var blankDiv = document.createElement("div");
   blankDiv.innerHTML =
-    "<div class='card-image'><img class='is-rounded ml-6 mr-4' style='width:275px' src='" +
+    "<div class='card-image'><img class='is-rounded ml-6 mr-4' src='" +
     ticketImg +
     "'></div>";
 
@@ -233,12 +233,24 @@ function createResults(ticketImg, finalTime, eventName, buyTicketUrl, timeString
   // ticketBtns.appendChild(watchlistBtn);
   ticketBtns.appendChild(buyTicketsBtn);
   loader.className = "";
+
+  // Bring back submit button
+  submitBtn.removeAttribute("disabled");
+}
+
+function clearResults(){
+  while(concertList.firstChild){
+    concertList.removeChild(concertList.firstChild);
+  }
 }
 
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
   loader.className = "loader";
   // console.log(spotIdInp)
+  if(concertList.childElementCount){
+    clearResults();
+  }
   var spotifyID = spotIdInp.value;
   localStorage.setItem("id", spotifyID);
   // var location = locationInp.value;
