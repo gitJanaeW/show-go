@@ -10,6 +10,7 @@ const locationInp = document.querySelector("#location");
 const submitBtn = document.querySelector("#submit-button");
 const watchlistBtn = document.querySelector("#heart-icon");
 const concertList = document.querySelector(".concert-list");
+const loader = document.querySelector("#loader");
 
 // misc
 let city = "";
@@ -45,16 +46,21 @@ let tmGenres = {
   undefined: "KnvZfZ7vAe6",
   world: "KnvZfZ7vAeF",
 };
+
+spotIdInp.value = localStorage.getItem("id");
+locationInp.value = localStorage.getItem("city");
+
 // spotify api key
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "1f43d66821mshd84ba78416fea1bp1371a7jsn4400a674f71b",
+    "X-RapidAPI-Key": "914dce6c37msha90e8d77384166fp1cd47fjsn218fe0be9f3e",
     "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
   },
 };
 function fetchResults(spotifyID, location) {
   console.log(spotifyID);
+  submitBtn.style.display = "none";
   // spotify user playlist fetch
   fetch(
     "https://spotify23.p.rapidapi.com/user_profile/?id=" +
@@ -142,12 +148,20 @@ function getConcertValues(concerts) {
     const finalTime = moment(time).format("MMM D, YYYY");
     // event name var
     const eventName = concerts._embedded.events[i].name;
+    const buyTicketUrl = concerts._embedded.events[i].url;
 
-    createResults(ticketImg, finalTime, eventName);
+    const startTime = concerts._embedded.events[i].dates.start.localTime;
+    // Prepend any date. Use your birthday.
+    const timeString12hr = new Date('2022-05-18T' + startTime + 'Z')
+      .toLocaleTimeString('en-US',
+        {timeZone:'UTC',hour12:true,hour:'numeric',minute:'numeric'}
+    );
+
+    createResults(ticketImg, finalTime, eventName, buyTicketUrl, timeString12hr);
   }
 }
 
-function createResults(ticketImg, finalTime, eventName) {
+function createResults(ticketImg, finalTime, eventName, buyTicketUrl, timeString12hr) {
   // create DOm elements
   var concertCard = document.createElement("div");
   concertCard.classList = "card";
@@ -170,7 +184,7 @@ function createResults(ticketImg, finalTime, eventName) {
   var column = document.createElement("div");
   column.classList = "column p-0 mt-4 ml-6";
   var columnClasses = ["title", "title is-4", "subtitle is-6"];
-  var columnContent = [eventName, finalTime, "day + time"];
+  var columnContent = [eventName, finalTime, "Doors open at " + timeString12hr + "!"];
   for (var x = 0; x < columnClasses.length; x++) {
     var columnP = document.createElement("p");
     columnP.classList = columnClasses[x];
@@ -181,18 +195,19 @@ function createResults(ticketImg, finalTime, eventName) {
   var ticketBtns = document.createElement("div");
   ticketBtns.classList =
     "p-0 mr-3 is-flex is-flex-direction-column is-justify-content-space-between is-align-items-flex-end";
-  var watchlistBtn = document.createElement("button");
-  watchlistBtn.classList = "button mt-4 columns mr-6";
-  watchlistBtn.setAttribute("type", "submit");
-  watchlistBtn.setAttribute("value", "submit input");
-  watchlistBtn.setAttribute("id", "heart-icon");
-  watchlistBtn.textContent = "♡";
+  // var watchlistBtn = document.createElement("button");
+  // watchlistBtn.classList = "button mt-4 columns mr-6";
+  // watchlistBtn.setAttribute("type", "submit");
+  // watchlistBtn.setAttribute("value", "submit input");
+  // watchlistBtn.setAttribute("id", "heart-icon");
+  // watchlistBtn.textContent = "♡";
 
   var buyTicketsBtn = document.createElement("button");
   buyTicketsBtn.classList =
     "button mr-5 mb-5 is-light is-rounded has-text-centred my-2 p-5";
-  buyTicketsBtn.setAttribute("type", "submit");
+  buyTicketsBtn.setAttribute("type", "button");
   buyTicketsBtn.setAttribute("id", "submit-button");
+  buyTicketsBtn.setAttribute("onclick", "window.open('" + buyTicketUrl + "');");
   buyTicketsBtn.textContent = "Buy Tickets";
 
   var cardImg = document.createElement("div");
@@ -215,17 +230,21 @@ function createResults(ticketImg, finalTime, eventName) {
   columns.appendChild(blankDiv);
   columns.appendChild(column);
   columns.appendChild(ticketBtns);
-  ticketBtns.appendChild(watchlistBtn);
+  // ticketBtns.appendChild(watchlistBtn);
   ticketBtns.appendChild(buyTicketsBtn);
-  submitBtn.style.display = "none";
+  loader.className = "";
 }
 
 submitBtn.addEventListener("click", function (e) {
   e.preventDefault();
+  loader.className = "loader";
   // console.log(spotIdInp)
   var spotifyID = spotIdInp.value;
+  localStorage.setItem("id", spotifyID);
   // var location = locationInp.value;
   city = locationInp.value;
+  localStorage.setItem("city", city);
+  
   fetchResults(spotifyID);
 });
 

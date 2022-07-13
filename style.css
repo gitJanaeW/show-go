@@ -13,9 +13,30 @@
 
 * */
 
+/* .form{
+    background-size: 40px 40px;
+    background-image:
+        linear-gradient(to right, grey 1px, transparent 1px),
+        linear-gradient(to bottom, grey 1px, transparent 1px)
+} */
+
 .img {
     width: 275px;
+    min-height: 120px;
+    max-height: 120px;
 }
+
+.card{
+    transition: all .5s ease-in-out;
+    margin-bottom: 4px;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 
 /*hero style start*/
 .hero-body {
@@ -66,6 +87,13 @@
     -webkit-text-stroke: 2px #F7E5A3;
     /* width and color */
     color: white;
+}
+
+#loader{
+    height: 100px;
+    width: 100px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 @media (min-width: 150px) and (max-width: 655px) {
