@@ -1,5 +1,11 @@
 // SONJA'S SPOTIFY ID FOR TESTING
 // 21gssgncgaiksynw4ely2rkea
+
+// IMITI'S KEY
+// 31csn67tinuymf4dvg7aqwjuueee
+// MINE
+// 
+
 // VARIABLES
 // getting HTML elements
 const navbarBurger = document.querySelector(".navbar-burger");
@@ -11,6 +17,7 @@ const submitBtn = document.querySelector("#submit-button");
 const watchlistBtn = document.querySelector("#heart-icon");
 const concertList = document.querySelector(".concert-list");
 const loader = document.querySelector("#loader");
+const formBlock = document.querySelector("#event-picker");
 
 // misc
 let city = "";
@@ -55,7 +62,7 @@ locationInp.value = localStorage.getItem("city");
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "914dce6c37msha90e8d77384166fp1cd47fjsn218fe0be9f3e",
+    "X-RapidAPI-Key": "2b92fef2bcmsh556664cb99f6a08p1d4c5fjsn24644372ab39",
     "X-RapidAPI-Host": "spotify23.p.rapidapi.com",
   },
 };
@@ -73,8 +80,8 @@ function fetchResults(spotifyID) {
       return response.json();
     })
     .then(function (response) {
-      let playlist = response.public_playlists[0].uri.slice(17);
-      getArtist(playlist);
+      console.log(response);
+      handlePlaylists(response);
     });
   // spotify tracks fetch
   function getArtist(id) {
@@ -90,6 +97,24 @@ function fetchResults(spotifyID) {
       .then(function (response) {
         getGenre(response.items[0].track.artists[0].id);
       });
+  }
+
+  // check if the user has public playlists to grab
+  function handlePlaylists(response){
+    console.log("public_playlists" in response);
+    if("public_playlists" in response){
+      let playlist = response.public_playlists[0].uri.slice(17);
+      console.log(playlist);
+      getArtist(playlist);
+    }
+    else{
+      loader.classList = "";
+      submitBtn.removeAttribute("disabled")
+      const alertBox = document.createElement("p");
+      alertBox.classList = "has-text-white";
+      alertBox.textContent = "Please make one of your playlists public and try again.";
+      formBlock.appendChild(alertBox);
+    }
   }
   // spotify artist fetch
   function getGenre(artistId) {
