@@ -18,6 +18,7 @@ const watchlistBtn = document.querySelector("#heart-icon");
 const concertList = document.querySelector(".concert-list");
 const loader = document.querySelector("#loader");
 const formBlock = document.querySelector("#event-picker");
+const errorText = document.querySelector(".error-text");
 
 // misc
 let city = "";
@@ -109,11 +110,8 @@ function fetchResults(spotifyID) {
     }
     else{
       loader.classList = "";
-      submitBtn.removeAttribute("disabled")
-      const alertBox = document.createElement("p");
-      alertBox.classList = "has-text-white";
-      alertBox.textContent = "Please make one of your playlists public and try again.";
-      formBlock.appendChild(alertBox);
+      submitBtn.removeAttribute("disabled");
+      errorText.innerHTML = "Please make sure you created playlists or <a class='has-text-warning is-underlined' href='./username.html'>test our usernames<a>";
     }
   }
   // spotify artist fetch
@@ -165,6 +163,8 @@ function getEvent(genreId, location) {
 
 // funtion to sort info for the events needed
 function getConcertValues(concerts) {
+  errorText.textContent = "";
+
   for (var i = 0; i < 10; i++) {
     // img var
     const ticketImg = concerts._embedded.events[i].images[i].url;
