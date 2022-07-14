@@ -31,7 +31,7 @@ img {
 
 /*hero style start*/
 .hero-body {
-  background-image: url("../ShowGo/assets/images/concerthandwithbubble.png");
+  background-image: url("../show-go/assets/images/concert-hand.png");
   height: 1000px;
   background-size: cover;
   background-position: center;
@@ -39,7 +39,7 @@ img {
 }
 
 .hero-body2 {
-  background-image: url("../ShowGo/assets/images/concert-hand.png");
+  background-image: url("../show-go/assets/images/concert-hand.png");
   height: 1500px;
   background-size: cover;
   background-position: center;
