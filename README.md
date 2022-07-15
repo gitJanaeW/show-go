@@ -1,8 +1,8 @@
-# Show Go
+# SHOWGO
 
 ## Purpose
 
- Help Users find multiple new music events with the help of they're spotify account preferences in any location of the users choosing!
+ Help users find multiple new music events with the help of they're Spotify account genre preferences in any location of the users choosing!
 
 ## Built With
 
@@ -16,12 +16,11 @@
 
 ## Website
 
-https://sonjaIlic94.github.io/ShowGo/
+https://gitjanaew.github.io/show-go/
 
 ## Created by
 
 - Sonja Ilic
-- Janae Welsh
 - Spencer Pichette
-
+- Janae Welsh
 
