@@ -16,7 +16,7 @@
       <!-- Hero head: will stick at the top -->
       <div class="hero-head is-dark">
         <nav class="navbar">
-          <!--Brand Loga-->
+          <!--Brand Logo-->
           <div class="navbar-brand">
             <a href="" class="navbar-item is-size-1 ml-3">ShowGo </a>
             <a class="navbar-burger" id="burger">
@@ -113,7 +113,7 @@
       <section class="section">
         <div class="container">
           <div class="columns is-centered is-multiline is-mobile">
-            <div class="form-block column is-half">
+            <div class="form-block column is-three-quarters">
               <h2 class="is-size-3 has-text-centered">Find Your Event</h2>
               <br />
               <form id="event-picker">
@@ -137,13 +137,14 @@
                 />
                 <br />
                 <button
-                  class="button is-light is-rounded has-text-centred my-4"
+                  class="is-flex is-justify-content-center button is-light is-rounded has-text-centred my-4"
                   type="submit"
                   value="submit input"
                   id="submit-button"
                 >
                   Search for Events
                 </button>
+                <p class="error-text has-text-white"></p>
                 <div id="loader"></div>
               </form>
             </div>
@@ -158,3 +159,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
   <script src="script.js" type="text/javascript"></script>
 </html>
+

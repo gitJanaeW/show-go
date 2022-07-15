@@ -18,6 +18,7 @@ const watchlistBtn = document.querySelector("#heart-icon");
 const concertList = document.querySelector(".concert-list");
 const loader = document.querySelector("#loader");
 const formBlock = document.querySelector("#event-picker");
+const errorText = document.querySelector(".error-text");
 
 // misc
 let city = "";
@@ -80,7 +81,6 @@ function fetchResults(spotifyID) {
       return response.json();
     })
     .then(function (response) {
-      console.log(response);
       handlePlaylists(response);
     });
   // spotify tracks fetch
@@ -101,19 +101,14 @@ function fetchResults(spotifyID) {
 
   // check if the user has public playlists to grab
   function handlePlaylists(response){
-    console.log("public_playlists" in response);
     if("public_playlists" in response){
       let playlist = response.public_playlists[0].uri.slice(17);
-      console.log(playlist);
       getArtist(playlist);
     }
     else{
       loader.classList = "";
-      submitBtn.removeAttribute("disabled")
-      const alertBox = document.createElement("p");
-      alertBox.classList = "has-text-white";
-      alertBox.textContent = "Please make one of your playlists public and try again.";
-      formBlock.appendChild(alertBox);
+      submitBtn.removeAttribute("disabled");
+      errorText.innerHTML = "Please make sure you have public playlists or <a class='has-text-warning is-underlined' href='./username.html#sample-username'>test our usernames<a>";
     }
   }
   // spotify artist fetch
@@ -165,7 +160,10 @@ function getEvent(genreId, location) {
 
 // funtion to sort info for the events needed
 function getConcertValues(concerts) {
-  for (var i = 0; i < 10; i++) {
+  errorText.textContent = "";
+  debugger;
+  for (var i = 0; i < concerts._embedded.events.length ||
+    concerts._embedded.events[10]; i++) {
     // img var
     const ticketImg = concerts._embedded.events[i].images[i].url;
     // time var
