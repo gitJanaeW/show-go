@@ -111,7 +111,7 @@ function fetchResults(spotifyID) {
     else{
       loader.classList = "";
       submitBtn.removeAttribute("disabled");
-      errorText.innerHTML = "Please make sure you created playlists or <a class='has-text-warning is-underlined' href='./username.html'>test our usernames<a>";
+      errorText.innerHTML = "Please make sure you created playlists or <a class='has-text-warning is-underlined' href='./username.html#sample-username'>test our usernames<a>";
     }
   }
   // spotify artist fetch
