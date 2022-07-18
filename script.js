@@ -8,9 +8,6 @@
 
 // VARIABLES
 // getting HTML elements
-const navbarBurger = document.querySelector(".navbar-burger");
-const navDropdown = document.querySelector("#nav-dropdown");
-const navbarItem = document.querySelector(".navbar-item");
 const spotIdInp = document.querySelector("#spotify-username");
 const locationInp = document.querySelector("#location");
 const submitBtn = document.querySelector("#submit-button");
