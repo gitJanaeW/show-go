@@ -4,7 +4,7 @@
   --third-color: white;
 }
 
-img {
+.card-img {
   width: 160px;
 }
 .username-image {
@@ -40,11 +40,11 @@ ul, li{
 }
 
 /*hero style start*/
-.hero-body {
-  background-image: url("../images/concert-hand.png");
-  height: 1000px;
+.hero-img {
+  background-image: url("../images/vecteezy_pink-yellow-and-blue-fluid-gradient-background_7718444.jpg");
+  height: 91vh;
   background-size: cover;
-  background-position: center;
+  background-position: left;
   position: relative;
 }
 

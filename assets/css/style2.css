@@ -1,0 +1,92 @@
+:root {
+  --primary-color: #F5953F;
+  --secondary-color: #f7e5a3;
+  --tertiary-color: white;
+}
+  
+body{
+  overflow-x: hidden;
+}
+
+ul, li{
+  list-style:disc;
+}
+
+.sticky{
+  position: sticky;
+  position: -webkit-sticky;
+  top: 200px;    
+}
+
+.card {
+  transition: all 0.5s ease-in-out;
+  margin-bottom: 4px;
+}
+
+.card-img {
+  width: 160px;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/*hero style start*/
+.hero-img {
+  background-image: url("../images/vecteezy_pink-yellow-and-blue-fluid-gradient-background_7718444.jpg");
+  height: 91vh;
+  background-size: cover;
+  background-position: left;
+  position: relative;
+}
+
+.headline{
+  color: white;
+  text-align: end;
+  position: relative;
+  right: 7vw;
+  top: 26vh;
+}
+
+.less-searching{
+  font-size: 50px;
+  font-weight:600;
+}
+
+.more-dancing{
+  font-size: xx-large;
+}
+
+#loader {
+  height: 50px;
+  width: 50px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.input:focus {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--primary-color);
+}
+
+#submit-button {
+  color: var(--primary-color);
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--primary-color);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+#submit-button:hover {
+  background-color: var(--primary-color);
+  color: var(--tertiary-color);
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+.footer {
+  height: 50vh;
+}

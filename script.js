@@ -215,7 +215,7 @@ function createResults(
 
   var blankDiv = document.createElement("div");
   blankDiv.innerHTML =
-    "<div class='card-image'><img class='is-rounded ml-6 mr-4' src='" +
+    "<div class='card-image'><img class='is-rounded ml-6 mr-4 card-img' src='" +
     ticketImg +
     "'></div>";
 
