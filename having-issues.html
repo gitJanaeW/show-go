@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowGo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <link rel="stylesheet" href="./assets/css/having-issues-mq.css"/>
+</head>
+
+<body>
+    <section class="hero is-dark">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head is-dark">
+            <nav class="navbar">
+                <!--Brand Logo-->
+                <div class="navbar-brand">
+                    <a href="./index.html" class="navbar-item is-size-1 ml-3">ShowGo
+                    </a>
+                    <a class="navbar-burger" id="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+                <div class="navbar-menu" id="navbar-links">
+                    <div class="navbar-end">
+                        <a href="./having-issues.html" class="navbar-item ml-3">Find Your ID</a>
+                    </div>
+            </nav>
+        </div>
+        <main class="is-flex">
+            <div class="sticky tile is-vertical is-parent mx-6 my-5">
+                <p class="title is-size-2 has-text-white my-6 ml-2" id="having-issues">Having Issues?</p>
+                <p class="is-size-6 is-size-6-mobile m-2">Your spotify ID may not be what you think! Double-check that your are inputing the right username <a class="has-text-warning is-underlined" href="./having-issues.html#find-your-id">here</a>.</p>
+                <p class="is-size-6 is-size-6-mobile m-2">Before using your username, make sure you have <span class="has-text-weight-semibold">public playlists</span class="has-text-weight-semibold"> available. If you've just made your first public playlist, <span class="has-text-weight-semibold">it may take 5 minutes or longer for your playlist to be searchable.</span>
+                    Spotify playlists are not considered public if they are:</p>
+                <ul>
+                    <li class="is-size-6 is-size-6-mobile m-2 ml-5">Not a playlist you've made</li>
+                    <li class="is-size-6 is-size-6-mobile m-2 ml-5">A playlist you've made that is not set up to be public</li>
+                </ul>
+            </div>
+            <div class="tile is-ancestor is is-flex is-flex-direction-column">
+                <div class="tile is-parent m-1 mr-3 mb-6">
+                    <div class="tile is-child box">
+                        <p class="title is-size-2 has-text-centered has-text-dark mb-6 mt-4" id="sample-username">Use Sample Usernames</p>
+                        <p class="iis-size-6 mb-5 mx-3">Don't have your own Spotify username handy? Copy sample usernames from the developers and our friends. Don't worry, we have great taste.</p>
+                        
+                        <div class="copy-container">
+                            <p class="is-size-5 has-text-centered is-size-6-mobile mt-3">This user likes pop:</p>
+                            <div class="is-flex is-align-items-center is-justify-content-center mb-4">
+                                <p class="is-size-6 p-2 has-text-centered has-text-weight-semibold sample-username">21gssgncgaiksynw4ely2rkea</p>
+                                <button class="copy-button button p-2 is-light is-rounded has-text-centred my-4 ml-2"
+                                id="submit-button">Copy</button>
+                            </div>
+                            <p class="is-size-5 has-text-centered is-size-6-mobile mt-3">This user likes soul and R&B:</p>
+                            <div class="is-flex is-align-items-center is-justify-content-center mb-4">
+                                <p class="is-size-6 p-2 has-text-centered has-text-weight-semibold sample-username">31tr2qiuk5sdz3id53ambv4igoei</p>
+                                <button class="copy-button button p-2 is-light is-rounded has-text-centred my-4 ml-2"
+                                id="submit-button">Copy</button>
+                            </div>
+                            <p class="is-size-5 has-text-centered is-size-6-mobile mt-3">This user folk:</p>
+                            <div class="is-flex is-align-items-center is-justify-content-center mb-4">
+                                <p class="is-size-6 p-2 has-text-centered has-text-weight-semibold sample-username">4vgve0a5u8mu4ztrajwi0zm5g</p>
+                                <button class="copy-button button p-2 is-light is-rounded has-text-centred my-4 ml-2"
+                                id="submit-button">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tile is-parent m-1 mr-3 mb-4">
+                    <div class="tile is-child box">
+                        <p class="title is-size-2 has-text-centered has-text-dark mb-6 mt-4" id="find-your-id">Find Your ID</p>
+                        <p class="is-size-6 is-size-6-mobile">1. On the main page, click your account from the
+                            drop-down
+                            menu.</p>
+                        <img class="username-image mb-6" src="./assets/images/Spotify-main-page.png" alt="spotify's account dropdown menu location">
+                        <br>
+                        <p class="is-size-6 is-size-6-mobile">2. Your ID will be labelled "Username". Copy your ID/username and begin your search.</p>
+                        <img class="username-image mb-3" src="./assets/images/Spotify-account-overview.png" alt="spotify's username location">
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+</body>
+
+<script src="index.js"></script>
+<script src='copyText.js' type="text/javascript"></script>
+
+</html>

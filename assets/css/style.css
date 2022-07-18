@@ -18,6 +18,16 @@ img {
   opacity: 0.7;
 }
 
+ul, li{
+  list-style:disc;
+}
+
+.sticky{
+  position: sticky;
+  position: -webkit-sticky;
+  top: 200px;    
+}
+
 .card {
   transition: all 0.5s ease-in-out;
   margin-bottom: 4px;
@@ -31,7 +41,7 @@ img {
 
 /*hero style start*/
 .hero-body {
-  background-image: url("../show-go/assets/images/concert-hand.png");
+  background-image: url("../images/concert-hand.png");
   height: 1000px;
   background-size: cover;
   background-position: center;
@@ -114,49 +124,4 @@ img {
 
 .footer {
   height: 50vh;
-}
-
-@media (min-width: 150px) and (max-width: 655px) {
-  .background {
-    background-color: var(--secondary-color);
-    opacity: 1;
-    text-align: center;
-    border-radius: 25px;
-    height: 310px;
-    width: auto;
-    padding: 0%;
-  }
-
-  .background2 {
-    height: 300px;
-    width: auto;
-  }
-
-  .find-username {
-    font-size: 25px;
-  }
-
-  #dancing-text {
-    justify-content: center;
-    padding: 0%;
-    margin-left: 0%;
-  }
-
-  #show-text {
-    justify-content: center;
-    margin-left: 0%;
-    padding-bottom: 0%;
-  }
-
-  #intro-section-2 {
-    padding-right: 60px;
-  }
-
-  #time-of-event {
-    align-content: center;
-  }
-
-  .img {
-    width: 60%;
-  }
 }
