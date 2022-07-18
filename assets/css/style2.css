@@ -1,6 +1,6 @@
 :root {
   --primary-color: #F5953F;
-  --secondary-color: #f7e5a3;
+  --secondary-color: #ED1E86;
   --tertiary-color: white;
 }
   
@@ -10,6 +10,10 @@ body{
 
 ul, li{
   list-style:disc;
+}
+
+input{
+
 }
 
 .sticky{
@@ -58,18 +62,63 @@ ul, li{
 .more-dancing{
   font-size: xx-large;
 }
+/* hero style end */
+
+/* find your event start */
+.head-text-white{
+  font-size: xx-large;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+
+.section-gradient{
+  background: linear-gradient(180deg, rgba(13,19,33,1) 50%, rgba(37,54,82,1) 100%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-style{
+  padding: 15vh 0;
+}
+
+.input-style{
+  width: 25vw;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 20px;
+  min-width: 250px;
+}
+
+.input:focus {
+  border: 2px solid var(--secondary-color);
+}
+
+#submit-button{
+  position: relative;
+  left: 22%;
+  margin: 10px 0 10px 10px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.error-text{
+  color: white;
+  max-width: 280px;
+  text-align: center;
+}
+
+
 
 #loader {
   height: 50px;
   width: 50px;
   margin-top: 20px;
   margin-left: 20px;
-}
-
-.input:focus {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
 }
 
 #submit-button {

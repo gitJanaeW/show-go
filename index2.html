@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./assets/css/index-mq.css"/>
   </head>
   <body>
+    <!-- Header and Hero -->
     <header class="hero is-dark">
       <nav class="navbar">
           <!-- Navbar reference: https://bulma.io/documentation/components/navbar/#basic-navbar -->
@@ -52,53 +53,35 @@
                   </div> -->
               </div>
       </nav>
-  </header>
-      <!-- Hero content: will be in the middle -->
+    </header>
     <div class="hero-img">
-        <!--To the left, what we do-->
-        <h1 class="less-searching headline">
-            Less Searching,
-        </h1>
-        <h2 class="more-dancing headline">
-            More Dancing.
-        </h2>
+        <h1 class="less-searching headline">Less Searching,</h1>
+        <h2 class="more-dancing headline">More Dancing.</h2>
         <h4 class="sub-head headline">
             Let SHOWGO do the heavy-lifting. Give us your <br>Spotify ID and we'll give you new artists that you'll <br><span class="has-text-weight-semibold">LOVE</span> at a concert near you.
         </h4>
     </div>
-   
-            
-   
-
-    <!--How To Do it Section-->
-    <section class="section has-background-dark has-text-white">
-      <!--Form Section-->
-      <section class="section">
-        <div class="container">
-          <div class="columns is-centered is-multiline is-mobile">
-            <div class="form-block column is-three-quarters">
-              <h2 class="is-size-3 has-text-centered">Find Your Event</h2>
-              <br />
-              <form id="event-picker">
-                <input type="text" class="input is-rounded py-2" id="spotify-username" placeholder="Your Spotify Username"
-                  name="spot-id" required/>
-                <br/>
-                <input type="text" class="input is-rounded py-2" id="location" placeholder="Your City" name="city" required/>
-                <br/>
-                <button
-                  class="is-flex is-justify-content-center button is-light is-rounded has-text-centred my-4"
-                  type="submit" value="submit input" id="submit-button">Search for Events
-                </button>
-                <p class="error-text"></p>
-                <div id="loader"></div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--Event Dom Section-->
-      <section class="section concert-list"></section>
+    <!--Form Section-->
+    <section class="form-style section-gradient">
+        <h2 class="head-text-white">Find Your Event</h2>
+        <br />
+        <form id="event-picker">
+            <input type="text" class="input input-style" id="spotify-username"
+                placeholder="Your Spotify Username" name="spot-id" required/>
+            <br/>
+            <input type="text" class="input input-style" id="location" placeholder="Your City"
+                name="city" required/>
+            <br/>
+            <button type="submit" value="submit input" id="submit-button">
+                Search for Events
+            </button>
+            <p class="error-text"></p>
+            <div id="loader"></div>
+        </form>
+        <!--Event List Dom Section-->
+        <section class="section concert-list"></section>
     </section>
+
   </body>
   <script src="./assets/js/navbar.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
