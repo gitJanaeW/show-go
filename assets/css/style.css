@@ -1,36 +1,36 @@
 :root {
-  --primary-color: #d809d1;
-  --secondary-color: #f7e5a3;
-  --third-color: white;
+  --primary-color: #F5953F;
+  --secondary-color: #ED1E86;
+  --tertiary-color: white;
+  --black: color: rgb(34, 32, 31);
+}
+  
+body{
+  overflow-x: hidden;
 }
 
-.card-img {
-  width: 160px;
-}
-.username-image {
-  width: auto;
-  border-radius: 10px;
+ul{
+  margin-left: 3vw;
 }
 
-.navbar-item:hover {
-  border: 2px solid var(--primary-color);
-  border-radius: 10px;
-  opacity: 0.7;
-}
-
-ul, li{
+li{
   list-style:disc;
 }
-
-.sticky{
-  position: sticky;
-  position: -webkit-sticky;
-  top: 200px;    
+button {
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  transition: all 0.3s ease-in-out 0s;
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .card {
   transition: all 0.5s ease-in-out;
   margin-bottom: 4px;
+}
+
+.card-img {
+  width: 160px;
 }
 
 .card:hover {
@@ -48,80 +48,173 @@ ul, li{
   position: relative;
 }
 
-.hero-body2 {
-  background-image: url("../show-go/assets/images/concert-hand.png");
-  height: 1500px;
-  background-size: cover;
-  background-position: center;
+.headline{
+  color: white;
+  text-align: end;
   position: relative;
+  right: 7vw;
+  top: 26vh;
 }
 
-.background2 {
-  background-color: black;
-  opacity: 0.8;
-  border-radius: 25px;
+.less-searching{
+  font-size: 50px;
+  font-weight:600;
 }
 
-#dancing-text {
-  margin-left: 50px;
-  padding-top: 70px;
-  padding-bottom: 0%;
-  display: inline;
+.more-dancing{
+  font-size: xx-large;
 }
 
-#show-text {
-  margin-left: 85px;
-  padding-bottom: 30px;
-  display: inline;
+.sub-head{
+  margin-left: 70%;
 }
 
-.textcolor {
-  color: var(--third-color);
-  opacity: 1;
+/* hero style end */
+
+/* find your event start */
+
+.text-white{
+  display: flex;
+  justify-content: center;
+  color: white;
 }
 
-.find-username {
-  font-size: 80px;
-  -webkit-text-stroke: 2px var(--secondary-color);
-  /* width and color */
-  color: var(--third-color);
-  transition: all 0.3s ease-in-out;
+.section-gradient{
+  background: linear-gradient(180deg, rgba(13,19,33,1) 50%, rgba(37,54,82,1) 100%);
 }
-.find-username:hover {
-  opacity: 0.7;
+
+.form-style{
+  padding: 20vh 0 7vh 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-style{
+  width: 25vw;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 20px;
+  min-width: 250px;
+}
+
+.input:focus {
+  border: 2px solid var(--secondary-color);
+}
+
+.error-text{
+  color: white;
+  max-width: 280px;
+  text-align: center;
 }
 
 #loader {
-  height: 100px;
-  width: 100px;
-  margin-top: 20px;
-  margin-left: 20px;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
-.input:focus {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--primary-color);
+
+#event-picker{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#submit-button {
-  color: var(--primary-color);
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--primary-color);
-  transition: all 0.3s ease-in-out 0s;
-}
+
 #submit-button:hover {
   background-color: var(--primary-color);
-  color: var(--third-color);
+  color: var(--tertiary-color);
   opacity: 0.7;
   transform: scale(1.1);
 }
+/* find your event end */
 
-.sample-username{
+/* having issues start */
+.sticky-fix{
+  background-color: rgba(34, 32, 31, 0);
+}
+
+.sticky-spacer{
+  margin-top: 6vh;
+}
+
+.issues-main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.text-block{
+  margin: 4vh 0
+}
+
+.p-white{
+  color: white;
+  margin: 3vh 0;
+}
+
+.sticky-main{
+  width: 40%;
+}
+/* having issues end */
+
+/* cards start */
+.main-cards{
+  position: relative;
+  left: 20vw;
+  max-width: 45%;
+}
+
+.main-card{
+  background-color: white;
+  padding: 10vh 4vw;
+  margin: 2vh 0;
+  border-radius: 5px;
+}
+
+.head-text{
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+}
+
+.text-black{
+  
+  color: rgb(34, 32, 31);
+}
+
+.p-genre{
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2vh;
+}
+
+.p-id{
   border: 2px solid var(--primary-color);
+  padding: 3px;
   border-radius: 25px;
-  min-width: 240px;
+  min-width: 235px;
+  height: 40px;
+  text-align: center;
+  margin-left: 5px;
 }
 
-.footer {
-  height: 50vh;
+.copy-container > *{
+  margin: 2vh auto;
 }
+
+.copy-row{
+  display: flex;
+  justify-content: center;
+}
+
+.copy-button{
+  padding: 3px;
+  margin: 0 0 0 3px;
+}
+
+.spot-id-img{
+  border-radius: 5px;
+}
+/* cards end */

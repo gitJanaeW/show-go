@@ -158,7 +158,6 @@ function getEvent(genreId, location) {
 // funtion to sort info for the events needed
 function getConcertValues(concerts) {
   errorText.textContent = "";
-  debugger;
   for (var i = 0; i < concerts._embedded.events.length ||
     concerts._embedded.events[10]; i++) {
     // img var
@@ -251,7 +250,7 @@ function createResults(
   var imgBox = document.createElement("figure");
   imgBox.classList = "image is-8by9";
   imgBox.innerHTML =
-    "<img class='is-rounded' src='./assets/images/aconcert.jpeg'>";
+    "<img class='is-rounded' src='" + ticketImg + "'>";
 
   var textBox = document.createElement("div");
   textBox.classList = "media-content has-text-centered";
