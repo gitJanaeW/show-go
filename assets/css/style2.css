@@ -16,11 +16,6 @@ li{
   list-style:disc;
 }
 
-.sticky{
-  position: sticky;
-  position: -webkit-sticky;
-  top: 200px; 
-}
 
 .card {
   transition: all 0.5s ease-in-out;
@@ -65,11 +60,6 @@ li{
 /* hero style end */
 
 /* find your event start */
-.head-text-white{
-  font-size: xx-large;
-  color: white;
-}
-
 .find-your-event{
   display: flex;
   justify-content: center;
@@ -143,24 +133,30 @@ li{
 }
 
 .sticky-spacer{
-  margin-top: 4vh;
+  margin-top: 6vh;
 }
 
 .issues-main{
   display: flex;
   flex-direction: row;
   justify-content: center;
-}  
+}
+
+.text-block{
+  margin: 4vh 0
+}
 
 .p-white{
-    color: white;
-    margin: 3vh 0;
-  }
+  color: white;
+  margin: 3vh 0;
+}
 
-  .sticky-main{
-    width: 40%;
-  }
+.sticky-main{
+  width: 40%;
+}
+/* having issues end */
 
+/* cards start */
 .main-cards{
   position: relative;
   left: 20vw;
@@ -169,8 +165,8 @@ li{
 
 .main-card{
   background-color: white;
-  padding: 10vh 5vw;
-  margin: 2vh 2vw;
+  padding: 10vh 4vw;
+  margin: 2vh 0;
   border-radius: 5px;
 }
 
@@ -181,7 +177,41 @@ li{
   color: rgb(34, 32, 31);
 }
 
-/* having issues end */
+.p-genre{
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2vh;
+}
+
+.p-id{
+  border: 2px solid var(--primary-color);
+  padding: 3px;
+  border-radius: 25px;
+  min-width: 235px;
+  height: 40px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.copy-container > *{
+  margin: 2vh auto;
+}
+
+.copy-row{
+  display: flex;
+  justify-content: center;
+}
+
+.copy-button{
+  padding: 3px;
+  margin: 0 0 0 3px;
+}
+
+.spot-id-img{
+  border-radius: 5px;
+}
+
+/* cards end */
 
 .footer {
   height: 50vh;

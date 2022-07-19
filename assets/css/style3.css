@@ -1,0 +1,136 @@
+:root {
+    --primary-color: #F5953F;
+    --secondary-color: #ED1E86;
+    --tertiary-color: white;
+  }
+    
+  
+  ul{
+    margin-left: 3vw;
+  }
+  
+  li{
+    list-style:disc;
+  }
+  
+  .section-gradient{
+    background: linear-gradient(180deg, rgba(13,19,33,1) 50%, rgba(37,54,82,1) 100%);
+  }
+  
+  #loader {
+    height: 50px;
+    width: 50px;
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #copy-button {
+    color: var(--primary-color);
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(--primary-color);
+    transition: all 0.3s ease-in-out 0s;
+  }
+  
+  #copy-button:hover {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  /* find your event end */
+  
+  /* having issues start */
+  
+  .issues-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+#sticky{
+    margin: 2vw;
+}
+
+  .text-block{
+    margin: 4vh 0
+  }
+  
+  .p-white{
+    color: white;
+    margin: 3vh 0;
+  }
+  
+  .sticky-main{
+    width: 90%;
+  }
+
+  .issues-main{
+    padding: 0 4vw;
+  }
+
+  /* having issues end */
+  
+  /* cards start */
+  
+  .main-card{
+    background-color: white;
+    padding: 10vh 5vw;
+    margin: 3vh 0;
+    border-radius: 5px;
+  }
+  
+  .head-text-black{
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    color: rgb(34, 32, 31);
+    text-align: center;
+  }
+  
+  #copy-button{
+    padding: 10px;
+    border-radius: 20px;
+  }
+  
+  .p-genre{
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 2vh;
+  }
+  
+  .p-id{
+    border: 2px solid var(--primary-color);
+    padding: 3px;
+    border-radius: 25px;
+    min-width: 235px;
+    height: 40px;
+    text-align: center;
+    margin-left: 5px;
+  }
+  
+  .copy-container > *{
+    margin: 2vh auto;
+  }
+  
+  .copy-row{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .copy-button{
+    padding: 3px;
+    margin: 0 0 0 3px;
+  }
+  
+  .spot-id-img{
+    border-radius: 5px;
+  }
+  
+  /* cards end */
+  
+  .footer {
+    height: 50vh;
+  }
