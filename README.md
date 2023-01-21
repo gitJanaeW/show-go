@@ -24,3 +24,6 @@ https://gitjanaew.github.io/show-go/
 - Spencer Pichette
 - Janae Welsh
 
+---
+
+![](assets/images/showgo.jpg)
